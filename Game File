@@ -1,0 +1,51 @@
+print("Hello,")
+print("lets play a game, friend!")
+print( )
+print("Round 1")
+print( )
+print("The computer is trying to find the number '7' in a list of 10 random numbers")
+print( )
+print("The computer will keep pulling lists of 10 random numbers until it finds a 7.")
+print("You win if the computer finds 7 in less than 4 rounds")
+
+import random
+a = [random.randint(1,100) for b in range(10)]
+print(a)
+print(a[0])
+print(7 in a)
+c = 1
+while 7 not in a:
+    a = [random.randint (1, 100) for b in range(10)]
+    print(a)
+    print(a[0])
+    print(7 in a)
+    print ("number of rounds =")
+    print(c)
+    c = c + 1
+if c > 4:
+    print ("You lost!")
+else:
+    print("You won!")
+print( )
+print( )
+print("lets play another game, friend!")
+print( )
+print("Round 2:")
+print( )
+print("Now you get to pick your own value, and")
+print("you'll get more chances to win this time.")
+print( )
+d = input("input value here: ")
+d = int(d)
+a = [random.randint(1,100) for b in range(10)]
+c = 1
+while d not in a:
+    a = [random.randint (1, 100) for b in range(10)]
+    print ("number of rounds =")
+    print(c)
+    c = c + 1
+
+if c > 10:
+    print("You lost again!")
+if c < 10:
+    print("You Won! Congrats!")
