@@ -1,51 +1,76 @@
-print("Hello,")
-print("lets play a game, friend!")
-print( )
-print("Round 1")
-print( )
-print("The computer is trying to find the number '7' in a list of 10 random numbers")
-print( )
-print("The computer will keep pulling lists of 10 random numbers until it finds a 7.")
-print("You win if the computer finds 7 in less than 4 rounds")
+#Imports
 
+from time import sleep
 import random
-a = [random.randint(1,100) for b in range(10)]
-print(a)
-print(a[0])
-print(7 in a)
-c = 1
-while 7 not in a:
-    a = [random.randint (1, 100) for b in range(10)]
-    print(a)
-    print(a[0])
-    print(7 in a)
-    print ("number of rounds =")
-    print(c)
-    c = c + 1
-if c > 4:
+
+#Game introduction
+
+print("Hello,")
+print("lets play a game, friend!" + "\n") ; sleep(1)
+input("press enter to play") ; print("\n")
+print("Game 1:" + "\n") ; sleep(1)
+print("The computer is trying to find the number '7' in a list of 10 random numbers" + "\n") ; sleep(1.9)
+print("The computer will keep pulling lists of 10 random numbers until it finds a 7.") ; sleep(2.3)
+print("You win if the computer finds a 7 in less than 4 rounds." + "\n") ; sleep(1.5)
+
+#Create series for the computer to pull
+
+Series = [random.randint(1,100) for b in range(10)]
+Round_number: int = 1
+
+#Main loop for game 1
+
+while 7 not in Series:
+    Series = [random.randint (1, 100) for b in range(10)]
+    print("Round number:"); print(Round_number); sleep(.8)
+    input("Press enter to play this round") ; print("\n")
+    print(Series); sleep(1)
+    print("The 5th number in the sequence was:"); sleep(1)
+    print(Series[4]); sleep(1)
+    print("Was 7 in this round?"); sleep(1)
+    print(7 in Series); sleep(1)
+    Round_number = Round_number + 1
+    print("\n")
+if Round_number > 4:
     print ("You lost!")
 else:
     print("You won!")
-print( )
-print( )
-print("lets play another game, friend!")
-print( )
-print("Round 2:")
-print( )
-print("Now you get to pick your own value, and")
-print("you'll get more chances to win this time.")
-print( )
-d = input("input value here: ")
-d = int(d)
-a = [random.randint(1,100) for b in range(10)]
-c = 1
-while d not in a:
-    a = [random.randint (1, 100) for b in range(10)]
-    print ("number of rounds =")
-    print(c)
-    c = c + 1
+sleep(1.5); print("\n")
 
-if c > 10:
-    print("You lost again!")
-if c < 10:
-    print("You Won! Congrats!")
+#Introducction for game two
+
+print("lets play another game, friend!" + "\n")
+input("Press enter to play" + "\n")
+print("Game 2:" + "\n"); sleep(.8)
+print("Now you get to pick your own value, and"); sleep(1.5)
+print("you'll get more chances to win this time." + "\n"); sleep(1)
+
+#User value mechanic
+User_value = input("input value here: ")
+User_value = int(User_value)
+
+#Create Sereis 2
+Series2 = [random.randint(1,100) for b in range(10)]
+Round_number2: int = 1
+
+#Main loop for Game 2
+
+while User_value not in Series2:
+    Series2 = [random.randint (1, 100) for b in range(10)]
+    print( )
+    print("round number:"); print(Round_number2); sleep(.5)
+    input("Press enter to play this round" + "\n")
+    print(Series2)
+    print("Was your value in this round?"); print(User_value in Series2); sleep(1.5)
+    Round_number2 = Round_number2 + 1
+    print( )
+
+if Round_number2 > 10:
+    print("You lost again!" + "\n")
+    print("HA"); sleep(.8)
+    print("Ha"); sleep(.8)
+    print("Ha!")
+if Round_number2 < 10:
+    print("You Won! Congrats!" + "\n")
+
+input("Press enter to close")
