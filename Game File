@@ -6,12 +6,12 @@ import random
 #Game introduction
 
 print("Hello,")
-print("lets play a game, friend!" + "\n") ; sleep(1)
-input("press enter to play") ; print("\n")
+print("lets play a game, friend!" + "\n"); sleep(1)
+input("press enter to play"); print("\n")
 print("Game 1:" + "\n") ; sleep(1)
-print("The computer is trying to find the number '7' in a list of 10 random numbers" + "\n") ; sleep(1.9)
-print("The computer will keep pulling lists of 10 random numbers until it finds a 7.") ; sleep(2.3)
-print("You win if the computer finds a 7 in less than 4 rounds." + "\n") ; sleep(1.5)
+print("The computer is trying to find the number '7' in a list of 10 random numbers" + "\n"); sleep(1.9)
+print("The computer will keep pulling lists of 10 random numbers until it finds a 7."); sleep(2.3)
+print("You win if the computer finds a 7 in less than 4 rounds." + "\n"); sleep(1.5)
 
 #Create series for the computer to pull
 
@@ -23,7 +23,7 @@ Round_number: int = 1
 while 7 not in Series:
     Series = [random.randint (1, 100) for b in range(10)]
     print("Round number:"); print(Round_number); sleep(.8)
-    input("Press enter to play this round") ; print("\n")
+    input("Press enter to play this round"); print("\n")
     print(Series); sleep(1)
     print("The 5th number in the sequence was:"); sleep(1)
     print(Series[4]); sleep(1)
